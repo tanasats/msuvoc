@@ -3,35 +3,36 @@ import Link from 'next/link'
 import React, { useEffect, useState } from 'react'
 import { HiBars3BottomRight } from 'react-icons/hi2'
 import { LuAudioLines } from 'react-icons/lu'
+import { PiFacebookLogoBold, PiInstagramLogoBold, PiXLogoBold, PiYoutubeLogoBold } from 'react-icons/pi'
 
 
 type Props = {
-    openNav:() => void
+    openNav: () => void
 }
 
-const Nav = ({openNav}:Props) => {
-    const [navBg,setNavBg] = useState(false);
-    
+const Nav = ({ openNav }: Props) => {
+    const [navBg, setNavBg] = useState(false);
+
     useEffect(() => {
         const handler = () => {
-            if(window.scrollY >= 90 ) setNavBg(true);
-            if(window.scrollY < 90 ) setNavBg(false);
+            if (window.scrollY >= 90) setNavBg(true);
+            if (window.scrollY < 90) setNavBg(false);
         };
-        window.addEventListener("scroll",handler);
-    },[]);
+        window.addEventListener("scroll", handler);
+    }, []);
 
     return (
-        <div className={` ${navBg?'bg-blue-950 shadow-md':'fixed'} transition-all duration-200 h-[12vh] z-[1000] fixed w-full`}>
+        <div className={` ${navBg ? 'bg-blue-950 shadow-md' : 'fixed'} transition-all duration-200 h-[12vh] z-[1000] fixed w-full`}>
             <div className='flex items-center h-full justify-between w-[90%] xl:w-[80%] mx-auto'>
                 {/* LOGO */}
                 <div className='flex items-center space-x-2'>
                     <div className='w-10 h-10 bg-rose-500 rounded-full flex items-center justify-center flex-col'>
                         <LuAudioLines className='w-6 h-6 text-white' />
                     </div>
-                    <h1 className='text-xl md:text-2xl text-white font-bold'>VOC</h1>
+                    <h1 className='text-xl md:text-3xl text-white font-bold'>VOC</h1>
                 </div>
                 {/* NavL inks */}
-                <div className='hidden lg:flex items-center space-x-10'>
+                <div className='hidden lg:flex items-center space-x-10 text-xl'>
                     {navLinks.map((link, index) => {
                         return (
                             <Link key={index} href={link.url}>
@@ -40,13 +41,17 @@ const Nav = ({openNav}:Props) => {
                         )
                     })}
                 </div>
-                <div className="flex itmes-center space-x-4">
-                    <button className="md:px-12 md:py-2.5 px-8 py-2 text-black text-base bg-white hover:bg-gray-200 transition-all duration-200 rounded-lg">
+                <div className="flex items-center space-x-4 text-white text-2xl lg:text-3xl">
+                    <Link href={'https://www.facebook.com/MahasarakhamUniversity.MSU'}><PiFacebookLogoBold className='hover:text-yellow-300' /></Link>
+                    <Link href={'https://x.com/MsuUniversity?fbclid=IwAR22V4FFD6KpC1R5pAOo7WwQq4zPNwkcSXaDCh4xc3vrTnLrDwjbwMRIWWE'}><PiXLogoBold className='hover:text-yellow-300' /></Link>
+                    <Link href={'https://www.instagram.com/mahasarakhamuniversity/?fbclid=IwAR0aS4Q4ajWC5LV_WLruOP2dhw7tvnbO4P1G9n8HvmnStxCO6Ts1I7G9iGE'}><PiInstagramLogoBold className='hover:text-yellow-300' /></Link>
+                    <Link href={'https://www.youtube.com/c/msutubeThailand'}><PiYoutubeLogoBold className='hover:text-yellow-300' /></Link>
+                    {/* <button className="md:px-12 md:py-2.5 px-8 py-2 text-black text-base bg-white hover:bg-gray-200 transition-all duration-200 rounded-lg">
                         Login
-                    </button>
-                    <HiBars3BottomRight 
-                    onClick={openNav}
-                    className='w-8 h-8 text-white lg:hidden'/>
+                    </button> */}
+                    <HiBars3BottomRight
+                        onClick={openNav}
+                        className='w-11 h-11 text-white lg:hidden' />
                 </div>
             </div>
         </div>

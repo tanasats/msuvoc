@@ -2,10 +2,11 @@
 const api_server = process.env.API_SERVER;
 
 
-//📌 getSurveybox pagging 
+// GetSurveybox by pagging 
 export const getSurveybox = async (page: number, limit: number, orderby: string) => {
     console.log("getSurveybox()");
   try {
+    console.log(api_server);
     const res = await fetch(`${api_server}/surveybox?page=${page}&limit=${limit}&orderby=${orderby}`, {
       method: "GET",
       headers: {
@@ -20,6 +21,6 @@ export const getSurveybox = async (page: number, limit: number, orderby: string)
     return data;
 
   } catch (error) {
-    console.error("Error fetching users:", error);
+    console.error("Error fetching surveybox:", error);
   }
 }
