@@ -44,7 +44,7 @@ const SurveyboxCard = ({ surveybox }: Props) => {
       <div className='text-'>
         <h1 className='mt-4 text-lg font-semibold text-blue-900 hover:text-black cursor-pointer transition-all duration-200'>
           {surveybox.title}</h1>
-        <p className='text-sm text-gray-600 mt-2 font-normal mb-6'>{surveybox.description}</p>
+        <p className='text-sm text-gray-600 mt-2 font-normal mb-6'><span className='font-bold text-blue-900'>ประเด็น : </span>{surveybox.description}</p>
 
         <div className='flex justify-between items-center text-sm text-gray-600'>
           <div className='flex'>
