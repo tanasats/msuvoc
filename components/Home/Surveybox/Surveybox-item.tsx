@@ -12,7 +12,7 @@ type Props = {
 const SurveyboxItem = ({ surveybox }: Props) => {
   return (
     <div>
-      <Link href={surveybox.link} >
+      <Link href={`/surveys/${surveybox.id}`} >
         <div className='relative h-[300xp] w-full rounded-lg cursor-pointer group overflow-hidden'>
           {/* add to fav button */}
           <div className='absolute top-4 right-4 z-20 w-8 h-8 bg-white rounded-full text-gray-500 flex items-center justify-center flex-col'>

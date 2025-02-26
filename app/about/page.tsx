@@ -1,20 +1,19 @@
+import SectionHeading from '@/components/Helper/SectionHeading'
 import React from 'react'
+import Image from 'next/image'
 
 const AboutPage = () => {
     return (
         <div className='mx-auto'>
             <div className='bg-blue-950 h-[10vh]'></div>
-
-            <iframe
-                src="https://docs.google.com/forms/d/e/1FAIpQLSdpVz3SjHdScGe1CBr15rPXNp2Sj7oWM-rz0-X9tkNQRzjQng/viewform?embeded=true"
-                width="100%"
-                height="3000px"
-                frameBorder={0}
-                marginHeight={0}
-                marginWidth={0}>
-                Loading...
-            </iframe>
-
+            <div className='h-[2rem]'></div>
+            <SectionHeading
+                heading='MSU VOC Platform'
+                subheading='คือ กรอบการทำงานสำหรับรับฟังเสียงนิสิต มมส เพื่อใช้เป็นข้อมูลนำไปสู่การปรับปรุงพัฒนาสิ่งสนับสนุนการเรียนรู้ และโครงสร้างพื้นฐาน '
+            />
+            <div className='w-[80%] mx-auto'>
+                <Image src={`/pictures/VoC.png`} width={1500} height={1500} alt="VoC Platform" />
+            </div>
         </div>
     )
 }

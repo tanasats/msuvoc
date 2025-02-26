@@ -25,7 +25,7 @@ const Hero = () => {
             </h1>
             <p className='md:text-base text-center text-white font-normal mb-3'>นิสิต มมส ประเมินความพึงพอใจต่อสิ่งสนับสนุนการเรียนรู้ และ โครงสร้างพื้นฐาน</p>
             <div  onClick={() => scrolltoHash('survey-section')}>
-            <button className="mx-auto md:px-12 md:py-2.5 px-8 py-2 text-black text-base bg-white hover:bg-gray-200 transition-all duration-200 rounded-lg">
+            <button className="mx-auto md:px-12 md:py-2.5 px-8 py-2 text-base text-white bg-white/50 hover:bg-green-600 hover:text-white transition-all duration-200 rounded-lg">
               ร่วมประเมินความพึงพอใจ
             </button>
             </div>
