@@ -1,24 +1,10 @@
 import SectionHeading from '@/components/Helper/SectionHeading'
-////////import { SurveyboxData } from '@/data/data'
 import React from 'react'
 import Image from 'next/image'
 import SurveyboxItem from './Surveybox-item'
 import { SurveyboxType } from '@/app/types/Surveybox'
 import { SurveyboxData } from '@/data/data'
-//import { Surveybox } from '@/app/types/Surveybox'
 
-// interface surveybox {
-//   title: string;
-//   description: string;
-//   picture: string;
-//   link: string;
-//   tags: string;
-//   publish_status: string;
-
-//   id?: number|undefined;
-//   created_at?: string;
-//   modified_at?: string;
-// }
 type Props = {
   datas:SurveyboxType[];
 }

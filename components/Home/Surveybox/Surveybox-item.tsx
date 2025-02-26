@@ -5,22 +5,8 @@ import React from 'react'
 import { FaHeart } from 'react-icons/fa';
 import { LuHeart, LuSend, LuUser } from 'react-icons/lu';
 
-// type Props = {
-//   surveybox: {
-//     id: number | undefined;
-//     title: string;
-//     description: string;
-//     picture: string;
-//     link: string;
-//     tags: string;
-//     publish_status: string;
-//     created_at: string;
-//     modified_at: string;
-//   }
-// }
-
 type Props = {
-  surveybox:SurveyboxType;
+  surveybox: SurveyboxType;
 }
 
 const SurveyboxItem = ({ surveybox }: Props) => {
@@ -40,17 +26,15 @@ const SurveyboxItem = ({ surveybox }: Props) => {
             width={500}
             height={500}
             className='overflos-hidden h-full w-full transition-all duration-300 object-cover group-hover:scale-110' />
-
         </div>
       </Link>
-
-
       {/* Content */}
       <div className='text-'>
         <h1 className='mt-4 text-lg font-semibold text-blue-900 hover:text-black cursor-pointer transition-all duration-200'>
           {surveybox.title}</h1>
-        <p className='text-sm text-gray-600 mt-2 font-normal mb-6'><span className='font-bold text-blue-900'>ประเด็น : </span>{surveybox.description}</p>
-
+        <p className='text-sm text-gray-600 mt-2 font-normal mb-6'><span className='font-bold text-blue-900'>ประเด็น : </span>
+          {surveybox.description}
+        </p>
         <div className='flex justify-between items-center text-sm text-gray-600'>
           <div className='flex'>
             <LuHeart className='text-xl' />
@@ -59,10 +43,7 @@ const SurveyboxItem = ({ surveybox }: Props) => {
               4.88
             </span>
           </div>
-
         </div>
-
-
         <div className='flex justify-between items-center text-sm text-gray-600'>
           <div className='flex'>
             <LuUser className='text-xl' />
@@ -72,15 +53,12 @@ const SurveyboxItem = ({ surveybox }: Props) => {
             </span>
           </div>
           <Link href={surveybox.link} >
-          <button className="md:px-4 md:py-2 px-8 py-2 text-gray-600 bg-gray-100 hover:bg-gray-200 transition-all duration-200 rounded-lg">
-            <LuSend className='inline me-1' />แบบประเมิน
-          </button>
+            <button className="md:px-4 md:py-2 px-8 py-2 text-gray-600 bg-gray-100 hover:bg-gray-200 transition-all duration-200 rounded-lg">
+              <LuSend className='inline me-1' />แบบประเมิน
+            </button>
           </Link>
         </div>
       </div>
-
-
-
     </div>
   )
 }

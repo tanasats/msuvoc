@@ -6,6 +6,11 @@ export const navLinks = [
     },
     {
         id: 2,
+        label: "ประเมินความพึงพอใจ",
+        url: "#survey-section"
+    },
+    {
+        id: 3,
         label: "เกี่ยวกับเรา",
         url: "#"
     },
