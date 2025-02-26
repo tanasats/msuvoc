@@ -32,7 +32,7 @@ const Nav = ({ openNav }: Props) => {
                     <h1 className='text-xl md:text-3xl text-white font-bold'>VOC</h1>
                 </div>
                 {/* NavL inks */}
-                <div className='hidden lg:flex items-center space-x-10 text-xl'>
+                <div className='hidden lg:flex items-center space-x-10 text-base'>
                     {navLinks.map((link, index) => {
                         return (
                             <Link key={index} href={link.url}>

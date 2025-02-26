@@ -1,10 +1,11 @@
+import { scrolltoHash } from '@/lib/utils'
 import React from 'react'
 
 const Hero = () => {
-  const scrolltoHash = function (element_id: string) {
-    const element = document.getElementById(element_id)
-    element?.scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
-  }
+  // const scrolltoHash = function (element_id: string) {
+  //   const element = document.getElementById(element_id)
+  //   element?.scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
+  // }
 
   return (
     <div className="relative w-full h-[120vh] sm:h-[100vh]">

@@ -52,7 +52,7 @@ const SurveyboxItem = ({ surveybox }: Props) => {
               123
             </span>
           </div>
-          <Link href={surveybox.link} >
+          <Link href={`http://localhost:3000/surveys/${surveybox.id}`} >
             <button className="md:px-4 md:py-2 px-8 py-2 text-gray-600 bg-gray-100 hover:bg-gray-200 transition-all duration-200 rounded-lg">
               <LuSend className='inline me-1' />แบบประเมิน
             </button>
