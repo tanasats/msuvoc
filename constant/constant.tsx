@@ -11,6 +11,11 @@ export const navLinks = [
     },
     {
         id: 3,
+        label: "สรุปผลประเมินความพึงพอใจ",
+        url: "/report"
+    },
+    {
+        id: 4,
         label: "เกี่ยวกับเรา",
         url: "/about"
     },

@@ -35,7 +35,7 @@ const SurveyboxItem = ({ surveybox }: Props) => {
         <p className='text-sm text-gray-600 mt-2 font-normal mb-6'><span className='font-bold text-blue-900'>ประเด็น : </span>
           {surveybox.description}
         </p>
-        <div className='flex justify-between items-center text-sm text-gray-600'>
+        <div className='hidden xflex justify-between items-center text-sm text-gray-600'>
           <div className='flex'>
             <LuHeart className='text-xl' />
             <span className="h-fit inline-flex items-center bg-slate-100 text-xs font-medium px-2.5 py-0.5 rounded-full dark:bg-gray-100 dark:text-green-600">
@@ -44,8 +44,8 @@ const SurveyboxItem = ({ surveybox }: Props) => {
             </span>
           </div>
         </div>
-        <div className='flex justify-between items-center text-sm text-gray-600'>
-          <div className='flex'>
+        <div className='flex justify-end items-center text-sm text-gray-600'>
+          <div className='hidden xflex'>
             <LuUser className='text-xl' />
             <span className="h-fit inline-flex items-center bg-slate-100 text-xs font-medium px-2.5 py-0.5 rounded-full dark:bg-gray-100 dark:text-green-600">
               {/* <span className="w-2 h-2 me-1 bg-red-500 rounded-full"></span> */}
