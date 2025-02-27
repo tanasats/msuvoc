@@ -10,7 +10,7 @@ const SurveysPage = async ({params,}: {params: Promise<{ id: number }>}) => {
             <iframe
                 src={xxx?.link}
                 width="100%"
-                height="3000px"
+                height="5000px"
                 frameBorder={0}
                 marginHeight={0}
                 marginWidth={0}>
