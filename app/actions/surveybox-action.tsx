@@ -12,11 +12,27 @@ export const getSurveybox = async (page: number, limit: number, orderby: string)
         // Authorization: `Bearer ${accesstoken}`,
       },
     });
-    if (!res) return ({ message: "Failed to fetch users" });
+    if (!res) return ({ message: "Failed to fetch Surveybox" });
     const data = await res.json();
     return data;
-  } catch (error) {
-    console.error("Error fetching surveybox:", error);
+  } catch {
     return {error:true,message:"Error fetching data"}
+  }
+}
+
+export const getSurveyboxById = async (id:number) => {
+  try{
+    const res = await fetch(`${api_server}/surveybox/${id}`,{
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        // Authorization: `Bearer ${accesstoken}`,
+      }
+    });
+    if(!res) return ({message:"Failed to Fetch Surveybox"});
+    const data = await res.json();
+    return data;
+  }catch{
+    return {error:true, message:"Error fetching data"}
   }
 }

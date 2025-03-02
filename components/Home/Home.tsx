@@ -2,9 +2,7 @@
 import { useEffect, useState } from 'react'
 import Footer from './Footer/Footer'
 import Hero from './Hero/Hero'
-//import Surveybox from './Surveybox/Surveybox'
 import { getSurveybox } from '@/app/actions/surveybox-action'
-//import { SurveyboxData } from '@/data/data'
 import { SurveyboxType } from '@/app/types/Surveybox'
 import Surveybox from './Surveybox/Surveybox'
 
@@ -12,14 +10,13 @@ const Home = () => {
   const [surveyboxdata,setSurveyboxdata] = useState<SurveyboxType[]>([]);
 
   useEffect(() => {
-    console.log("run useEffect()");
     fetchSurveybox();
   }, [])
 
   const fetchSurveybox = async () => {
-    console.log("run fetchSurveybox()")
+    //console.log("run fetchSurveybox()")
     const res = await getSurveybox(1,20,"id");
-    console.log("getSurveybox() response=",res);
+    //console.log("getSurveybox() response=",res);
     setSurveyboxdata(res.items);
   }
 

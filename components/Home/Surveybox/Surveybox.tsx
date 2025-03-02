@@ -3,14 +3,13 @@ import React from 'react'
 import Image from 'next/image'
 import SurveyboxItem from './Surveybox-item'
 import { SurveyboxType } from '@/app/types/Surveybox'
-import { SurveyboxData } from '@/data/data'
+//import { SurveyboxData } from '@/data/data'
 
 type Props = {
   datas:SurveyboxType[];
 }
 
 const Surveybox = ({datas}:Props) => {
-  console.log("Surveybox()",datas);
   return (
     <div className='pt-20 pb-20'>
       {/* Section Heading */}
@@ -29,7 +28,7 @@ const Surveybox = ({datas}:Props) => {
       </div>
       <div className='w-[80%] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 items-start mt-16'>
         {/* Surveybox Card */}
-        {SurveyboxData.map((data:SurveyboxType) => {
+        {datas.map((data:SurveyboxType) => {
           return (
             <div key={data.id}>
               <SurveyboxItem surveybox={data} />
