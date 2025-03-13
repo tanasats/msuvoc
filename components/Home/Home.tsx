@@ -16,7 +16,7 @@ const Home = () => {
   const fetchSurveybox = async () => {
     //console.log("run fetchSurveybox()")
     const res = await getSurveybox(1,20,"id");
-    //console.log("getSurveybox() response=",res);
+    console.log("getSurveybox() response=",res);
     setSurveyboxdata(res.items);
   }
 

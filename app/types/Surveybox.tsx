@@ -6,6 +6,7 @@ export type SurveyboxType =  {
   link: string;
   tags: string;
   publish_status: string;
+  responsed:number;
   created_at: string;
   modified_at: string;
 }
