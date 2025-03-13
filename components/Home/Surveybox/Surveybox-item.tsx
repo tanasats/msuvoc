@@ -10,7 +10,7 @@ type Props = {
 }
 
 const SurveyboxItem = ({ surveybox }: Props) => {
-  const image_host_url = process.env.NEXT_PUBLIC_IMAGE_HOST;
+  const image_host_url = "https://voc.msu.ac.th/api/voc/image";
   return (
     <div>
       <Link href={`/surveys/${surveybox.id}`} >
