@@ -24,6 +24,7 @@ const Home = () => {
     <div className='overflow-hidden'>
       <div id="top-section"></div>
       <Hero />
+      {/* <Image src="http://localhost:4000/image/msu_evbus.jpg" alt=""/> */}
       {/* <Surveybox datas={surveyboxData}/> */}
       <div id="survey-section"></div>
       <Surveybox datas={surveyboxdata} />

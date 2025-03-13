@@ -3,15 +3,16 @@ import { getSurveyboxById } from "@/app/actions/surveybox-action";
 import { SurveyboxType } from "@/app/types/Surveybox";
 import { useParams } from "next/navigation";
 import { useEffect, useState } from "react";
+import { LuChevronsUp } from "react-icons/lu";
 
 const SurveysPage = () => {
   const { id } = useParams();
   const [surveybox, setSurveybox] = useState<SurveyboxType>();
+  const [showGotoTop, setShowGotoTop] = useState(false);
   // const [loading, setLoading] = useState(true);
   // const [error, setError] = useState(null);
 
   useEffect(() => {
-    //console.log("id=", id);
     if (!id) return;
     const fetchUser = async () => {
       try {
@@ -28,9 +29,22 @@ const SurveysPage = () => {
       }
     };
     fetchUser();
+    // goto top button -----
+    const handleScroll = () => {
+      if (window.scrollY > 300) {
+        setShowGotoTop(true);
+      } else {
+        setShowGotoTop(false);
+      }
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
   }, [id]);
 
-  //const surveybox = SurveyboxData.find((item) => item.id == id)
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
 
   return (
     <div className='mx-auto'>
@@ -45,7 +59,19 @@ const SurveysPage = () => {
         marginWidth={0}>
         Loading...
       </iframe>
-            {surveybox?.link}
+      {surveybox?.link}
+
+      {showGotoTop && (
+        <button
+        className="rounded-full p-2 text-2xl bg-blue-950 text-white right-8 bottom-5 fixed items-center"
+          onClick={scrollToTop}
+          style={{
+            
+          }}
+        >
+          <LuChevronsUp/>
+        </button>
+      )}
     </div>
   )
 }

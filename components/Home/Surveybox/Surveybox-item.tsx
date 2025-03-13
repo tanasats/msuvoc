@@ -1,5 +1,5 @@
+"use client"
 import { SurveyboxType } from '@/app/types/Surveybox';
-import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react'
 import { FaHeart } from 'react-icons/fa';
@@ -10,6 +10,7 @@ type Props = {
 }
 
 const SurveyboxItem = ({ surveybox }: Props) => {
+  const image_host_url = process.env.NEXT_PUBLIC_IMAGE_HOST;
   return (
     <div>
       <Link href={`/surveys/${surveybox.id}`} >
@@ -20,12 +21,14 @@ const SurveyboxItem = ({ surveybox }: Props) => {
           </div>
           <div className='absolute inset-0 bg-black opacity-20 z-10'> </div>
           {/* image */}
-          <Image
+          {/* <Image 
             src={`/pictures/${surveybox.picture}`}
+            //src={"localhost:4000/image/msu_evbus.jpg"}
             alt={surveybox.title}
             width={500}
             height={500}
-            className='overflos-hidden h-full w-full transition-all duration-300 object-cover group-hover:scale-110' />
+            className='overflos-hidden h-full w-full transition-all duration-300 object-cover group-hover:scale-110' /> */}
+          <img src={`${image_host_url}/${surveybox.picture}`} alt=""/>
         </div>
       </Link>
       {/* Content */}
