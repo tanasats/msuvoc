@@ -1,6 +1,6 @@
 "use client"
 import { Button } from '@/components/ui/button'
-import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card'
+import { Card, CardContent, CardHeader } from '@/components/ui/card'
 import { Checkbox } from '@/components/ui/checkbox'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
@@ -175,7 +175,7 @@ const survey1: Survey = {
 const SurveyPage = () => {
 
     const [responses, setResponses] = useState<Responses>({});
-    const [otherText, setOtherText] = useState<string>("");
+    // const [otherText, setOtherText] = useState<string>("");
 
     const handleRadioChange = (questionName: string, value: string) => {
         setResponses(prev => ({ ...prev, [questionName]: value }));
@@ -212,7 +212,7 @@ const SurveyPage = () => {
 
     const handleCheckboxChange = (questionName: string, value: string, checked: boolean) => {
         setResponses((prev: Responses) => {
-            var selectedValues = prev[questionName] || "";
+            let selectedValues = prev[questionName] || "";
             if (checked) {
                 selectedValues += value + ",";
             } else {
@@ -299,8 +299,8 @@ const SurveyPage = () => {
                                                         <div></div>
                                                         <RadioGroup>
                                                             <div className='flex justify-around items-center'>
-                                                                {element.columns?.map((column) => (
-                                                                    <div className='flex items-center'><Label htmlFor='' className='ps-2 inline-block'>{column.text}</Label></div>
+                                                                {element.columns?.map((column,columnIndex) => (
+                                                                    <div key={columnIndex} className='flex items-center'><Label htmlFor='' className='ps-2 inline-block'>{column.text}</Label></div>
                                                                 ))}
                                                             </div>
                                                         </RadioGroup>

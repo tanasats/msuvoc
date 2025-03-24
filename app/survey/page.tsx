@@ -1,6 +1,6 @@
 "use client"
 import { Button } from '@/components/ui/button'
-import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card'
+import { Card, CardContent, CardHeader } from '@/components/ui/card'
 import { Checkbox } from '@/components/ui/checkbox'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
@@ -258,7 +258,7 @@ const survey1: Survey = {
 const SurveyPage = () => {
 
     const [responses, setResponses] = useState<Responses>({});
-    const [otherText, setOtherText] = useState<string>("");
+    // const [otherText, setOtherText] = useState<string>("");
 
     const handleRadioChange = (questionName: string, value: string) => {
         setResponses(prev => ({ ...prev, [questionName]: value }));
@@ -278,10 +278,10 @@ const SurveyPage = () => {
         setResponses(prev => ({ ...prev, [questionName]: value }));
     };
 
-    const handleResetForm = () => {
-        console.log("reset form");
-        setResponses({});
-    }
+    // const handleResetForm = () => {
+    //     console.log("reset form");
+    //     setResponses({});
+    // }
 
     // const handleCheckboxChange = (questionName: string, value: string, checked: boolean) => {
     //     setResponses((prev: Responses) => {
@@ -300,7 +300,7 @@ const SurveyPage = () => {
 
     const handleCheckboxChange = (questionName: string, value: string, checked: boolean) => {
         setResponses((prev: Responses) => {
-            var selectedValues = prev[questionName] || "";
+            let selectedValues = prev[questionName] || "";
             if (checked) {
                 selectedValues += value + ",";
             } else {
@@ -388,8 +388,8 @@ const SurveyPage = () => {
                                                         <RadioGroup>
                                                             {/* <div className='flex justify-around'> */}
                                                             <div className='inline-grid grid-cols-5 gap-0'>
-                                                                {element.columns?.map((column) => (
-                                                                    <div className='flex items-center flex-grow'>
+                                                                {element.columns?.map((column,columnIndex) => (
+                                                                    <div key={columnIndex} className='flex items-center flex-grow'>
                                                                         <Label htmlFor='' className='ps-2 inline-block w-full text-center text-slate-500'>{column.text}</Label>
                                                                     </div>
                                                                 ))}
