@@ -26,6 +26,7 @@ const Surveybox = ({datas}:Props) => {
           height={1080}
           className='overflos-hidden h-full w-full transition-all duration-300 object-cover group-hover:scale-110' />
       </div>
+      {datas && 
       <div className='w-[80%] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 items-start mt-16'>
         {/* Surveybox Card */}
         {datas.map((data:SurveyboxType) => {
@@ -35,7 +36,7 @@ const Surveybox = ({datas}:Props) => {
             </div>
           )
         })}
-      </div>
+      </div>}
 
     </div>
   )

@@ -41,7 +41,7 @@ const SurveyboxItem = ({ surveybox }: Props) => {
           {surveybox.description}
         </p>
 
-        <div className='hidden flex justify-between items-center text-sm text-gray-600'>
+        <div className='hidden  justify-between items-center text-sm text-gray-600'>
           <div className='flex'>
             <LuHeart className='text-xl' />
             <span className="h-fit inline-flex items-center bg-slate-100 text-xs font-medium px-2.5 py-0.5 rounded-full dark:bg-gray-100 dark:text-green-600">
